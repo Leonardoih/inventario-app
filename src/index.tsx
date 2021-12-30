@@ -1,6 +1,21 @@
-import { render } from "react-dom";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import Navbar from "./Components/Navbar/Navbar";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootswatch/dist/morph/bootstrap.min.css';
+import reportWebVitals from "./reportWebVitals";
 
-import App from "./App";
 
-const rootElement = document.getElementById("root");
-render(<App />, rootElement);
+
+ReactDOM.render(
+    <div className="container">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navbar />} />
+        </Routes>
+      </BrowserRouter>
+    </div>,
+    document.getElementById("root")
+  );
+
+  reportWebVitals();
