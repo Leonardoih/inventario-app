@@ -1,21 +1,21 @@
+import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootswatch/dist/morph/bootstrap.min.css';
+import "bootswatch/dist/morph/bootstrap.min.css";
 import reportWebVitals from "./reportWebVitals";
-
-
+import Sidebar from "./Components/Sidebar/Sidebar";
 
 ReactDOM.render(
-    <div className="container">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Navbar />} />
-        </Routes>
-      </BrowserRouter>
-    </div>,
-    document.getElementById("root")
-  );
+  <React.StrictMode>
+    <BrowserRouter>
+      <div className="container">
+        <Navbar></Navbar>
+        <Sidebar></Sidebar>
+      </div>
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
 
-  reportWebVitals();
+reportWebVitals();
